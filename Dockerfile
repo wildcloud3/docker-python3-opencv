@@ -100,7 +100,7 @@ RUN wget -O ${TESSDATA_PREFIX}/equ.traineddata https://github.com/tesseract-ocr/
 # eng English
 RUN wget -O ${TESSDATA_PREFIX}/eng.traineddata https://github.com/tesseract-ocr/tessdata/raw/4.00/eng.traineddata
 # other languages: https://github.com/tesseract-ocr/tesseract/wiki/Data-Files
-RUN wget -O ${TESSDATA_PREFIX}/eng.traineddata https://github.com/tesseract-ocr/tessdata/raw/4.00/chi_sim.traineddata
+RUN wget -O ${TESSDATA_PREFIX}/chi_sim.traineddata https://github.com/tesseract-ocr/tessdata/raw/4.00/chi_sim.traineddata
 # other languages: https://github.com/tesseract-ocr/tesseract/wiki/Data-Files
 
 
