@@ -78,7 +78,7 @@ RUN mkdir ${PKG_DIR}
 RUN mkdir ${BASE_DIR}
 RUN mkdir ${TESSDATA_PREFIX}
 
-RUN pip install pytesseract
+RUN pip install pytesseract flask flask-cors
 
 # Leptonica
 # RUN git ls-remote ${LEP_REPO_URL} HEAD
@@ -99,6 +99,8 @@ RUN wget -O ${TESSDATA_PREFIX}/osd.traineddata https://github.com/tesseract-ocr/
 RUN wget -O ${TESSDATA_PREFIX}/equ.traineddata https://github.com/tesseract-ocr/tessdata/raw/3.04.00/equ.traineddata
 # eng English
 RUN wget -O ${TESSDATA_PREFIX}/eng.traineddata https://github.com/tesseract-ocr/tessdata/raw/4.00/eng.traineddata
+# other languages: https://github.com/tesseract-ocr/tesseract/wiki/Data-Files
+RUN wget -O ${TESSDATA_PREFIX}/eng.traineddata https://github.com/tesseract-ocr/tessdata/raw/4.00/chi_sim.traineddata
 # other languages: https://github.com/tesseract-ocr/tesseract/wiki/Data-Files
 
 
