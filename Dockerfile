@@ -114,5 +114,7 @@ RUN wget -O ${TESSDATA_PREFIX}/osd.traineddata https://github.com/tesseract-ocr/
 
 ADD ocrWeb.py ${HOME_DIR}/ocrWeb.py
 
+EXPOSE 5000
+
 WORKDIR ${HOME_DIR}
 ENTRYPOINT ["python", "ocrWeb.py"]
