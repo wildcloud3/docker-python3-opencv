@@ -6,10 +6,14 @@ import cv2
 import numpy as np
 from PIL import Image
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 
 app = Flask('ocrServer')
 URL = "http://www.tp-link.com.cn/content/images/detail/R50kit/1.jpg"
 SUPPORTED_LANGS = ['eng', 'chi_sim']
+
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def preprocessImage(image):
     return image
@@ -39,6 +43,7 @@ def ocrDesc():
     })
 
 @app.route("/ocr", methods=['POST'])
+@cross_origin()
 def ocrImage():
     lang = request.args.get('lang', default = 'chi_sim', type = str)
 
